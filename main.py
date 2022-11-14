@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import requests
+from requests.api import get
 
 def main():
     print('''
@@ -9,7 +9,7 @@ Example: https://www.youtube.com/c/SomeChannel
 
     inputUser = str(input('Type the URL of some YouTube channel to know its channel ID: '))
     try:
-        result = requests.get(inputUser)
+        result = get(inputUser)
         soup = BeautifulSoup(result.text, 'lxml')
 
         # Channel information
